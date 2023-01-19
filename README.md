@@ -8,5 +8,5 @@
 - TypeScript
 - JavaScript
 
-##Creator
+## Creator
 &copy;2023 Simon Muia&trade;
