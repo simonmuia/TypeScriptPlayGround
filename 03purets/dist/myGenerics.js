@@ -29,3 +29,18 @@ const getMoreSearchProducts = (products) => {
     const myIndex = 3;
     return products[myIndex];
 };
+function anotherFunction(valOne, valTwo) {
+    return {
+        valOne,
+        valTwo
+    };
+}
+//Create generic class
+class Sellable {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(products) {
+        this.cart.push(products);
+    }
+}

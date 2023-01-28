@@ -42,3 +42,41 @@ const getMoreSearchProducts = <T,>(products:T[]): T =>{
     const myIndex = 3
     return products[myIndex] 
 }
+//Using Type Parameters in Generic Constraints
+interface Database{
+    connection : string,
+    username: string,
+    password: string
+}
+
+function anotherFunction<T, U extends Database>(valOne:T, valTwo:U): object {
+    return {
+        valOne,
+        valTwo
+    }
+}
+
+
+// anotherFunction(3, {})
+
+// Using Class Types in Generics
+
+interface Quiz{
+    name: string, 
+    type: string
+}
+
+interface Course{
+    name: string,
+    author: string,
+    subject: string
+}
+
+//Create generic class
+class Sellable<T>{
+    public cart: T[] =[]
+
+    addToCart(products: T){
+        this.cart.push(products)
+    }
+}
