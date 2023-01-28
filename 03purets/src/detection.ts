@@ -47,10 +47,46 @@ function provideId(id:string | null){
   }
 
   //"In" operator narrowing
-  
+
   function isAdminAccount(account: User | Admin){
     //narrowing using "in" property
     if ("isAdmin" in account) {
         return account.isAdmin
     }
   }
+
+  //Example of Instanceof
+
+  function logValue(x: Date | string) {
+
+    if (x instanceof Date) { //checks whether x is an instance of Date std function
+      console.log(x.toUTCString());
+                 
+    } else {
+      console.log(x.toUpperCase());
+                 
+  
+  }
+
+}
+
+//using type predicates
+type Fish = {swim:()=>void};
+type Bird = {fly:()=>void};
+
+//specify type of value
+function isFish(pet: Fish | Bird):pet is Fish{
+    return (pet as Fish).swim !== undefined
+}
+
+//allocate the type
+function getFood(pet:Fish | Bird){
+    if (isFish(pet)) {
+        pet
+        return "fish food"
+    } else {
+        pet 
+        return "bird Food"
+        
+    }
+}

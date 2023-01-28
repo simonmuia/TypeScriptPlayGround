@@ -20,3 +20,27 @@ function isAdminAccount(account) {
         return account.isAdmin;
     }
 }
+//Example of Instanceof
+function logValue(x) {
+    if (x instanceof Date) { //checks whether x is an instance of Date std function
+        console.log(x.toUTCString());
+    }
+    else {
+        console.log(x.toUpperCase());
+    }
+}
+//specify type of value
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+//allocate the type
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return "fish food";
+    }
+    else {
+        pet;
+        return "bird Food";
+    }
+}
